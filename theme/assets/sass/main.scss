@@ -30,16 +30,24 @@ body, html {
 }
 
 body {
-    background: linear-gradient(270deg, #15e3ae, #e32915, #c615e3, #296069);
-    background-size: 800% 800%;
-
-    -webkit-animation: BackgroundAnimation 3s ease infinite;
-    -moz-animation: BackgroundAnimation 3s ease infinite;
-    animation: BackgroundAnimation 3s ease infinite;
-
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &.active {
+        background: linear-gradient(270deg, #15e3ae, #e32915, #c615e3, #296069);
+        background-size: 800% 800%;
+
+        -webkit-animation: BackgroundAnimation 3s ease infinite;
+        -moz-animation: BackgroundAnimation 3s ease infinite;
+        animation: BackgroundAnimation 3s ease infinite;
+    }
+
+    &:not(.active) {
+        &::before {
+            content: "Loading...";
+        }
+    }
 
     h1 {
         color: white;
