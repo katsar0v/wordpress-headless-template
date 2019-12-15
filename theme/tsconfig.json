@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "jsx": "react",
+        "target": "es2018",
+        "module": "commonjs",
+        "lib": [
+            "dom",
+            "es6",
+            "es2018",
+            "es2017.object"
+        ]
+    }
+}
