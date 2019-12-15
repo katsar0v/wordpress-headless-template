@@ -4,7 +4,7 @@ Headless WordPress template using TypeScript and React.
 
 ## About
 
-This repository is an example how a wordpress template can be headless using react and typescript. The needed environment for developing this theme is also shipped in this repository. For more details, please read [the details](#the-details)
+This repository is an example how a wordpress template can be headless using react and typescript. The needed environment for developing this theme is also shipped in this repository. For more details, please read [the details](#details)
 
 ## Requirements
 
