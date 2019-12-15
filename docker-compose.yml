@@ -1,0 +1,53 @@
+version: '3'
+services:
+  web:
+    container_name: wp_headless_web
+    image: nginx:1.17-alpine
+    networks:
+      - overlay
+    ports:
+    - 80:80
+    volumes:
+      - www-root:/var/www/html
+      - ./conf.d:/etc/nginx/conf.d
+    depends_on:
+      - php
+  php:
+    build: ./docker-php
+    container_name: wp_headless_php
+    depends_on:
+      - database
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - WP_ADMIN_USERNAME=admin
+      - WP_ADMIN_PASSWORD=123123
+    networks:
+      - overlay
+    volumes:
+      - www-root:/var/www/html
+  database:
+    image: mysql:8
+    container_name: wp_headless_db
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - overlay
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: wp_headless_phpmyadmin
+    depends_on:
+      - database
+    networks:
+      - overlay
+    ports:
+      - 9900:80
+    environment:
+      - PMA_HOST=database
+      - MYSQL_ROOT_PASSWORD=secret
+
+networks:
+  overlay:
+
+volumes:
+  www-root: {}

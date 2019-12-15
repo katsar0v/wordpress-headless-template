@@ -1,0 +1,27 @@
+{
+  "name": "wp-headless-theme",
+  "version": "0.0.1",
+  "description": "Example for WordPress headless",
+  "main": "index.js",
+  "scripts": {
+    "gulp-watch": "gulp watch",
+    "gulp-copy": "gulp docker_cp",
+    "build": "parcel build assets/ts/* -d assets/js/ --no-source-maps"
+  },
+  "keywords": [
+    "wp",
+    "headless"
+  ],
+  "author": "Kristiyan Katsarov",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.9.16",
+    "@types/react-dom": "^16.9.4",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "parcel": "^1.12.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "typescript": "^3.7.3"
+  }
+}

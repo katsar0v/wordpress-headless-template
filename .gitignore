@@ -1,0 +1,4 @@
+node_modules
+.cache
+theme/assets/css/
+theme/assets/js/
