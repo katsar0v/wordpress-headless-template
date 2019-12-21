@@ -21,7 +21,7 @@ Usage is pretty straight forward. To start the environment just run:
 
 After the development environment has started, run `npm install` inside `theme/` to install the dependencies. Finally you can run `npm run build` and `npm run gulp-copy` to copy the template in the container.
 
-You can activate the theme either from the dashboard (http://localhost/wp-admin) or by running `docker exec wp_headless_php wp theme activate theme`
+You can activate the theme either from the dashboard (http://localhost/wp-admin) or by running `docker exec wp_headless_php wp theme activate theme`. Make sure to be logged in (`/wp-admin`) in order to use the REST API (secured additionally in this theme).
 
 To develop the theme refer to the npm commands. Make sure to run `npm install .` inside the `theme/` folder before proceeding with development.
 
