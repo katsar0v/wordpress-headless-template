@@ -61,4 +61,4 @@ The template has a simple structure:
 
 ## Accessing PhpMyAdmin
 
-PhpMyAdmin is running on http://localhost:9900
+PhpMyAdmin is running on http://localhost:9900 (login details are in `docker-compose.yml`)
