@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import WPAPI from 'wpapi';
 
-const WPAPI = require( 'wpapi' );
 const wp = new WPAPI({ endpoint: window.location.origin + '/wp-json' });
 
 Promise.all([
