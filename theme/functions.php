@@ -1,4 +1,5 @@
 <?php
+// Register CSS and JS
 function register_scripts() {
     $main_js = get_template_directory_uri() . '/assets/js/index.js';
     $main_css = get_template_directory_uri() . '/assets/css/main.css';
@@ -11,4 +12,13 @@ function register_scripts() {
     wp_enqueue_style('roboto');
 }
 add_action( 'wp_enqueue_scripts', 'register_scripts' );
+
+// Secure wp json for logged in users
+add_filter('rest_authentication_errors', function($access) {
+    if ( !is_user_logged_in()) {
+        $message = apply_filters('disable_wp_rest_api_error', 'REST API restricted to authenticated users.');
+        return new \WP_Error('rest_login_required', $message, 401);
+    }
+    return $access;
+});
 ?>
