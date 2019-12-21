@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {WP_API} from './api';
 
+const WPAPI = require( 'wpapi' );
+const wp = new WPAPI({ endpoint: window.location.origin + '/wp-json' });
 
 Promise.all([
-    WP_API.get_posts(),
-    WP_API.get_pages()
+    wp.posts().get(),
+    wp.pages().get()
 ]).then((responses) => {
     ReactDOM.render(
         <h1>Hello, world!</h1>,
