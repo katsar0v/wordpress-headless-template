@@ -15,7 +15,7 @@ add_action( 'wp_enqueue_scripts', 'register_scripts' );
 
 // Secure wp json for logged in users
 add_filter('rest_authentication_errors', function($access) {
-    if ( !is_user_logged_in()) {
+    if (!is_user_logged_in()) {
         $message = apply_filters('disable_wp_rest_api_error', 'REST API restricted to authenticated users.');
         return new \WP_Error('rest_login_required', $message, 401);
     }
